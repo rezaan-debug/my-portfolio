@@ -14,7 +14,7 @@ export function Footer() {
           loading="lazy"
         />
         <div className="relative isolate overflow-hidden bg-footer-surface px-6 py-10 text-footer-foreground sm:hidden">
-          <img src={footerArt.url} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover object-left opacity-20" loading="lazy" />
+          <img src={footerArt.url} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover object-right opacity-20" loading="lazy" />
           <div className="mb-5"><BrandLogo size={64} /></div>
           <p className="font-display text-base font-semibold">{footer.copyright}</p>
           <p className="mt-5 text-sm italic leading-relaxed">{footer.craft}</p>
