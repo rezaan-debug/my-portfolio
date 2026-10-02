@@ -22,7 +22,7 @@ export function PageShell({
         <img
           src={background.url}
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 bg-background/35 dark:bg-background/70 transition-colors duration-[600ms]" />
       </div>

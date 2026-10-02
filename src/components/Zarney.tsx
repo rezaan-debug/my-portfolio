@@ -73,13 +73,13 @@ export function Zarney() {
         dragElastic={0.12}
         whileDrag={{ scale: 1.06, cursor: "grabbing" }}
         onClick={() => setOpen((v) => !v)}
-        className="glass fixed bottom-5 right-5 z-50 flex cursor-grab items-center gap-2 rounded-full py-2 pl-2 pr-4 shadow-xl"
+        className="glass fixed bottom-5 right-5 z-50 flex h-14 w-14 cursor-grab items-center justify-center rounded-full shadow-xl sm:h-auto sm:w-auto sm:gap-2 sm:py-2 sm:pl-2 sm:pr-4"
         aria-expanded={open}
         aria-label={open ? "Close Zarney assistant" : "Open Zarney assistant"}
       >
         <ZarneyAvatar size={42} />
-        <span className="font-display text-sm font-semibold">Zarney</span>
-        <span className="relative flex h-2 w-2">
+        <span className="hidden font-display text-sm font-semibold sm:inline">Zarney</span>
+        <span className="relative hidden h-2 w-2 sm:flex">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-teal" />
         </span>
