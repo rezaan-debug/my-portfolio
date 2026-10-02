@@ -3,32 +3,12 @@ import { useServerFn } from "@tanstack/react-start";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MessageCircle, Send, X } from "lucide-react";
 import { askZarney } from "@/lib/zarney.functions";
-import { useTheme } from "@/lib/theme";
+import zarneyImage from "@/assets/zarney.png.asset.json";
 
-/** Zarney's avatar — theme-aware light/dark variants. */
-export function ZarneyAvatar({ size = 28, dark }: { size?: number; dark: boolean }) {
+/** Zarney's supplied chatbot artwork. */
+export function ZarneyAvatar({ size = 28 }: { size?: number; dark?: boolean }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id={`zarney-g-${dark ? "d" : "l"}`} x1="6" y1="6" x2="42" y2="42">
-          <stop offset="0%" stopColor={dark ? "#2DD4BF" : "#0F766E"} />
-          <stop offset="100%" stopColor={dark ? "#E24BA6" : "#A02B93"} />
-        </linearGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" fill={`url(#zarney-g-${dark ? "d" : "l"})`} />
-      {/* Face */}
-      <circle cx="17" cy="20" r="2.2" fill={dark ? "#0c1116" : "#ffffff"} />
-      <circle cx="31" cy="20" r="2.2" fill={dark ? "#0c1116" : "#ffffff"} />
-      <path
-        d="M16 29c2.4 2.6 5.2 3.9 8 3.9s5.6-1.3 8-3.9"
-        stroke={dark ? "#0c1116" : "#ffffff"}
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        fill="none"
-      />
-      {/* Antenna spark */}
-      <circle cx="24" cy="6.5" r="2" fill="#C9A84C" />
-    </svg>
+    <img src={zarneyImage.url} width={size} height={size} alt="" className="shrink-0 rounded-full object-cover" />
   );
 }
 
@@ -49,7 +29,6 @@ export function Zarney() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
   const reduceMotion = useReducedMotion();
   const ask = useServerFn(askZarney);
 
@@ -94,13 +73,13 @@ export function Zarney() {
         dragElastic={0.12}
         whileDrag={{ scale: 1.06, cursor: "grabbing" }}
         onClick={() => setOpen((v) => !v)}
-        className="glass fixed bottom-5 right-5 z-50 flex cursor-grab items-center gap-2.5 rounded-full py-2.5 pl-3 pr-4 shadow-xl"
+        className="glass fixed bottom-5 right-5 z-50 flex h-14 w-14 cursor-grab items-center justify-center rounded-full shadow-xl sm:h-auto sm:w-auto sm:gap-2 sm:py-2 sm:pl-2 sm:pr-4"
         aria-expanded={open}
         aria-label={open ? "Close Zarney assistant" : "Open Zarney assistant"}
       >
-        <ZarneyAvatar dark={theme === "dark"} />
-        <span className="font-display text-sm font-semibold">Zarney</span>
-        <span className="relative flex h-2 w-2">
+        <ZarneyAvatar size={42} />
+        <span className="hidden font-display text-sm font-semibold sm:inline">Zarney</span>
+        <span className="relative hidden h-2 w-2 sm:flex">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-teal" />
         </span>
@@ -120,7 +99,7 @@ export function Zarney() {
           >
             <div className="flex items-center justify-between border-b border-border/50 px-4 py-3">
               <div className="flex items-center gap-2.5">
-                <ZarneyAvatar size={26} dark={theme === "dark"} />
+                <ZarneyAvatar size={36} />
                 <div>
                   <p className="font-display text-sm font-semibold leading-tight">Zarney</p>
                   <p className="text-[11px] leading-tight text-muted-foreground">

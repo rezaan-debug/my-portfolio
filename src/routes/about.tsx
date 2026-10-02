@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { Quote, Sparkles } from "lucide-react";
 import { PageShell, PageHeader, SectionHeading, Container } from "@/components/PageShell";
 import { about } from "@/lib/portfolio";
-import bgAbout from "@/assets/bg-about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -29,7 +28,7 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <PageShell image={bgAbout} imagePosition="left center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="About Me"

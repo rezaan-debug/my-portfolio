@@ -22,4 +22,5 @@
 - The public read-only MCP server lives at `src/routes/api/public/mcp.ts` (streamable-HTTP JSON-RPC 2.0); it must stay read-only and derive all data from `portfolio.ts`.
 - Design tokens (teal + pink brand, #A02B93 primary) are defined in `src/styles.css`; never hardcode raw color classes in components.
 - Theme is light by default, applied pre-paint by an inline script in `src/routes/__root.tsx` (see `src/lib/theme.tsx`); theme and surface transitions use 0.6s.
-- Content rules: never invent employers, clients, projects, awards, testimonials, certifications, statistics, metrics, dates, or qualifications. Placeholder profile photo must be clearly marked until Rezaan provides a real one.
+- Content rules: never invent employers, clients, projects, awards, testimonials, certifications, statistics, metrics, dates, or qualifications.
+- Shared page background belongs in `PageShell`; uploaded imagery uses CDN asset pointers except the favicon, which remains a small local PNG for browser compatibility.

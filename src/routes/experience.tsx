@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Briefcase } from "lucide-react";
 import { PageShell, PageHeader, Container } from "@/components/PageShell";
 import { experience } from "@/lib/portfolio";
-import bgPages from "@/assets/bg-pages.jpg";
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -28,7 +27,7 @@ export const Route = createFileRoute("/experience")({
 
 function ExperiencePage() {
   return (
-    <PageShell image={bgPages} imagePosition="center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="Experience"

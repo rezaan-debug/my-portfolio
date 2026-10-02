@@ -4,7 +4,6 @@ import { ArrowRight, Github, Linkedin, MapPin } from "lucide-react";
 import { PageShell, Container } from "@/components/PageShell";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { about, hero, profile } from "@/lib/portfolio";
-import bgHero from "@/assets/bg-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,7 +66,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <PageShell image={bgHero} imagePosition="center">
+    <PageShell>
       <Container>
         <section className="flex flex-col-reverse items-center gap-10 pt-36 pb-16 md:flex-row md:items-center md:justify-between md:gap-14 md:pt-48 md:pb-24">
           <div className="max-w-2xl text-center md:text-left">

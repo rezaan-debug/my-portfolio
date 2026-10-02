@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink, Github, Star } from "lucide-react";
 import { PageShell, PageHeader, SectionHeading, Container } from "@/components/PageShell";
 import { projects, type Project } from "@/lib/portfolio";
-import bgPages from "@/assets/bg-pages.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -75,7 +74,7 @@ function ProjectsPage() {
   const others = projects.filter((p) => !p.featured);
 
   return (
-    <PageShell image={bgPages} imagePosition="center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="Projects"
