@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHeader, Container } from "@/components/PageShell";
 import { skills } from "@/lib/portfolio";
-import bgPages from "@/assets/bg-pages.jpg";
 
 export const Route = createFileRoute("/skills")({
   head: () => ({
@@ -34,7 +33,7 @@ const GROUPS: Array<{ key: keyof typeof skills; label: string }> = [
 
 function SkillsPage() {
   return (
-    <PageShell image={bgPages} imagePosition="center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="Skills"

@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GraduationCap } from "lucide-react";
 import { PageShell, PageHeader, Container } from "@/components/PageShell";
 import { education } from "@/lib/portfolio";
-import bgPages from "@/assets/bg-pages.jpg";
 
 export const Route = createFileRoute("/education")({
   head: () => ({
@@ -28,7 +27,7 @@ export const Route = createFileRoute("/education")({
 
 function EducationPage() {
   return (
-    <PageShell image={bgPages} imagePosition="center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="Education"

@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { PageShell, PageHeader, Container } from "@/components/PageShell";
 import { profile } from "@/lib/portfolio";
-import bgAbout from "@/assets/bg-about.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -59,7 +58,7 @@ function ContactPage() {
   ];
 
   return (
-    <PageShell image={bgAbout} imagePosition="right center">
+    <PageShell>
       <Container>
         <PageHeader
           eyebrow="Contact"
