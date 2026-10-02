@@ -1,18 +1,15 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import background from "@/assets/light-background.png.asset.json";
 
 /**
  * Shared page chrome: fixed elegant background imagery with a theme-aware
  * overlay (readability never drops), plus a soft entrance animation.
  */
 export function PageShell({
-  image,
-  imagePosition = "center",
   children,
   className = "",
 }: {
-  image: string;
-  imagePosition?: string;
   children: ReactNode;
   className?: string;
 }) {
@@ -23,13 +20,11 @@ export function PageShell({
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
         <img
-          src={image}
+          src={background.url}
           alt=""
           className="h-full w-full object-cover"
-          style={{ objectPosition: imagePosition }}
         />
-        <div className="absolute inset-0 bg-background/90 dark:bg-background/[0.82] transition-colors duration-[600ms]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-70" />
+        <div className="absolute inset-0 bg-background/35 dark:bg-background/70 transition-colors duration-[600ms]" />
       </div>
       <motion.main
         initial={{ opacity: 0, y: 18 }}

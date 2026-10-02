@@ -4,31 +4,12 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MessageCircle, Send, X } from "lucide-react";
 import { askZarney } from "@/lib/zarney.functions";
 import { useTheme } from "@/lib/theme";
+import zarneyImage from "@/assets/zarney.png.asset.json";
 
-/** Zarney's avatar — theme-aware light/dark variants. */
-export function ZarneyAvatar({ size = 28, dark }: { size?: number; dark: boolean }) {
+/** Zarney's supplied chatbot artwork. */
+export function ZarneyAvatar({ size = 28 }: { size?: number; dark?: boolean }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id={`zarney-g-${dark ? "d" : "l"}`} x1="6" y1="6" x2="42" y2="42">
-          <stop offset="0%" stopColor={dark ? "#2DD4BF" : "#0F766E"} />
-          <stop offset="100%" stopColor={dark ? "#E24BA6" : "#A02B93"} />
-        </linearGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" fill={`url(#zarney-g-${dark ? "d" : "l"})`} />
-      {/* Face */}
-      <circle cx="17" cy="20" r="2.2" fill={dark ? "#0c1116" : "#ffffff"} />
-      <circle cx="31" cy="20" r="2.2" fill={dark ? "#0c1116" : "#ffffff"} />
-      <path
-        d="M16 29c2.4 2.6 5.2 3.9 8 3.9s5.6-1.3 8-3.9"
-        stroke={dark ? "#0c1116" : "#ffffff"}
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        fill="none"
-      />
-      {/* Antenna spark */}
-      <circle cx="24" cy="6.5" r="2" fill="#C9A84C" />
-    </svg>
+    <img src={zarneyImage.url} width={size} height={size} alt="" className="shrink-0 rounded-full object-cover" />
   );
 }
 

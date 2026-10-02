@@ -1,16 +1,14 @@
-import { UserRound } from "lucide-react";
+import photo from "@/assets/professional-photo.jpg.asset.json";
 
 /**
  * Professional profile area with a subtle, slowly spinning dashed ring.
- * Until a real photo is provided, this shows a clearly marked placeholder.
+ * Displays Rezaan's supplied professional photo.
  */
 export function ProfilePhoto({ size = 260 }: { size?: number }) {
   return (
     <div
       className="relative shrink-0"
       style={{ width: size, height: size }}
-      role="img"
-      aria-label="Placeholder for Rezaan Achmat Fredericks' profile photo — photo coming soon"
     >
       {/* Spinning dashed ring */}
       <svg
@@ -36,18 +34,13 @@ export function ProfilePhoto({ size = 260 }: { size?: number }) {
         </defs>
       </svg>
 
-      {/* Placeholder portrait */}
-      <div className="glass absolute inset-4 flex flex-col items-center justify-center gap-2 overflow-hidden rounded-full">
-        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-teal/15 via-transparent to-primary/15">
-          <UserRound
-            className="h-1/3 w-1/3 text-muted-foreground/70"
-            aria-hidden="true"
-          />
-        </div>
-        <span className="absolute bottom-6 rounded-full bg-background/80 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-          Photo coming soon
-        </span>
-      </div>
+      <img
+        src={photo.url}
+        alt="Rezaan Achmat Fredericks"
+        width={size}
+        height={size}
+        className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-full border border-border/60 object-cover object-center shadow-lg"
+      />
     </div>
   );
 }
