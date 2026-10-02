@@ -86,7 +86,7 @@ const chatSchema = z.object({
 export const askZarney = createServerFn({ method: "POST" })
   .inputValidator((data) => chatSchema.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
+    const apiKey = process.env["LOVABLE_API_KEY"];
     if (!apiKey) {
       return {
         reply:

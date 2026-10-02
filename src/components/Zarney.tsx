@@ -6,7 +6,7 @@ import { askZarney } from "@/lib/zarney.functions";
 import { useTheme } from "@/lib/theme";
 
 /** Zarney's avatar — theme-aware light/dark variants. */
-function ZarneyAvatar({ size = 28, dark }: { size?: number; dark: boolean }) {
+export function ZarneyAvatar({ size = 28, dark }: { size?: number; dark: boolean }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden="true">
       <defs>
