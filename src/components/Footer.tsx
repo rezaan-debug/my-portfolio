@@ -9,10 +9,17 @@ export function Footer() {
         <img
           src={footerArt.url}
           alt="Rezaan Achmat Fredericks — Design, Develop, Deliver. © 2026 Rezaan Achmat Fredericks. All Rights Reserved. Built with passion, precision, purpose, and a commitment to exceptional digital craftsmanship. Designed & Developed by Rezaan Achmat Fredericks."
-          className="block h-auto w-full"
+          className="hidden h-auto w-full sm:block"
           loading="lazy"
         />
-        <div className="flex items-center justify-center gap-4 px-4 py-4 sm:justify-end">
+        <div className="relative isolate overflow-hidden bg-footer-surface px-6 py-10 text-footer-foreground sm:hidden">
+          <img src={footerArt.url} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover object-left" loading="lazy" />
+          <div className="absolute inset-0 -z-10 bg-footer-surface/75" />
+          <p className="font-display text-base font-semibold">{footer.copyright}</p>
+          <p className="mt-5 text-sm italic leading-relaxed">{footer.craft}</p>
+          <p className="mt-5 text-sm font-medium">{footer.credit}</p>
+        </div>
+        <div className="flex items-center justify-center gap-4 bg-footer-surface px-4 py-3 text-footer-foreground sm:justify-end">
           <ul className="flex items-center gap-3" aria-label="Footer social links">
             {[
               { href: profile.github, label: "GitHub", Icon: Github },
@@ -25,7 +32,7 @@ export function Footer() {
                   target={href.startsWith("mailto") ? undefined : "_blank"}
                   rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   aria-label={label}
-                   className="theme-transition inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 text-foreground transition-colors duration-300 hover:border-primary/50 hover:text-primary"
+                   className="theme-transition inline-flex h-10 w-10 items-center justify-center rounded-full border border-footer-foreground/30 text-footer-foreground transition-colors duration-300 hover:border-gold hover:text-gold"
                 >
                   <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
                 </a>
@@ -33,7 +40,6 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <p className="px-4 pb-5 text-center text-xs text-muted-foreground sm:hidden">{footer.copyright}</p>
       </div>
     </footer>
   );

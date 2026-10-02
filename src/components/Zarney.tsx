@@ -3,7 +3,6 @@ import { useServerFn } from "@tanstack/react-start";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { MessageCircle, Send, X } from "lucide-react";
 import { askZarney } from "@/lib/zarney.functions";
-import { useTheme } from "@/lib/theme";
 import zarneyImage from "@/assets/zarney.png.asset.json";
 
 /** Zarney's supplied chatbot artwork. */
@@ -30,7 +29,6 @@ export function Zarney() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
   const reduceMotion = useReducedMotion();
   const ask = useServerFn(askZarney);
 
@@ -75,11 +73,11 @@ export function Zarney() {
         dragElastic={0.12}
         whileDrag={{ scale: 1.06, cursor: "grabbing" }}
         onClick={() => setOpen((v) => !v)}
-        className="glass fixed bottom-5 right-5 z-50 flex cursor-grab items-center gap-2.5 rounded-full py-2.5 pl-3 pr-4 shadow-xl"
+        className="glass fixed bottom-5 right-5 z-50 flex cursor-grab items-center gap-2 rounded-full py-2 pl-2 pr-4 shadow-xl"
         aria-expanded={open}
         aria-label={open ? "Close Zarney assistant" : "Open Zarney assistant"}
       >
-        <ZarneyAvatar dark={theme === "dark"} />
+        <ZarneyAvatar size={42} />
         <span className="font-display text-sm font-semibold">Zarney</span>
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-60" />
@@ -101,7 +99,7 @@ export function Zarney() {
           >
             <div className="flex items-center justify-between border-b border-border/50 px-4 py-3">
               <div className="flex items-center gap-2.5">
-                <ZarneyAvatar size={26} dark={theme === "dark"} />
+                <ZarneyAvatar size={36} />
                 <div>
                   <p className="font-display text-sm font-semibold leading-tight">Zarney</p>
                   <p className="text-[11px] leading-tight text-muted-foreground">

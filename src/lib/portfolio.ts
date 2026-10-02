@@ -184,5 +184,6 @@ export const education = [
 export const footer = {
   copyright: "© 2026 Rezaan Achmat Fredericks. All Rights Reserved.",
   craft:
-    "Developed through exceptional craftsmanship, passion, precision, purpose and digital ideas by Rezaan Achmat Fredericks.",
+    "Built with passion, precision, purpose, and a commitment to exceptional digital craftsmanship.",
+  credit: "Designed & Developed by Rezaan Achmat Fredericks",
 };
