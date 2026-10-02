@@ -28,7 +28,7 @@ function ZarneyAvatar({ size = 28, dark }: { size?: number; dark: boolean }) {
       />
       {/* Antenna spark */}
       <circle cx="24" cy="6.5" r="2" fill="#C9A84C" />
-ge    </svg>
+    </svg>
   );
 }
 
