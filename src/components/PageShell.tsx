@@ -8,13 +8,11 @@ import { motion } from "framer-motion";
 export function PageShell({
   image,
   imagePosition = "center",
-  imageHeight,
   children,
   className = "",
 }: {
   image: string;
   imagePosition?: string;
-  imageHeight?: string;
   children: ReactNode;
   className?: string;
 }) {
