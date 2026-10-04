@@ -68,6 +68,7 @@ export function Zarney() {
       {/* Floating, draggable launcher */}
       <motion.button
         type="button"
+        data-tour-target="zarney"
         drag={!reduceMotion}
         dragMomentum={false}
         dragElastic={0.12}

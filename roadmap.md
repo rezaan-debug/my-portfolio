@@ -12,6 +12,7 @@ All tasks complete.
 - [x] Public read-only MCP endpoint at /api/public/mcp (JSON-RPC 2.0, 5 tools)
 - [x] Production build passes; all routes, dark mode, mobile layout, welcome
       sequence, MCP endpoint verified in a real browser with zero console errors
+- [x] Keep Welcome centered and anchor the light/dark and Zarney introductions to their buttons
 
 ## Open items (waiting on Rezaan)
 
