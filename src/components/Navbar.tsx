@@ -101,7 +101,9 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <span data-tour-target="theme" className="inline-flex">
+            <ThemeToggle />
+          </span>
           <button
             type="button"
             className="theme-transition inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-card/60 text-foreground/80 backdrop-blur transition-colors lg:hidden"
