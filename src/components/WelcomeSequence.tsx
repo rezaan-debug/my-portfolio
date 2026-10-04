@@ -141,7 +141,7 @@ export function WelcomeSequence() {
           initial={{ opacity: 0, y: step === 2 ? -8 : 8 }}
           animate={{ opacity: position ? 1 : 0, y: 0 }}
           exit={{ opacity: 0 }}
-          className="glass fixed z-[70] w-[min(320px,calc(100vw-2rem))] p-5 shadow-xl"
+          className="glass fixed z-[70] w-[min(320px,calc(100vw-2rem))] bg-popover/95 p-5 shadow-xl"
           style={{ top: position?.top ?? -9999, left: position?.left ?? 16 }}
         >
           <span aria-hidden="true" className={`absolute h-3 w-3 rotate-45 border-border bg-card ${step === 2 ? "-top-1.5 border-l border-t" : "-bottom-1.5 border-b border-r"}`} style={{ left: (position?.arrowLeft ?? 28) - 6 }} />
