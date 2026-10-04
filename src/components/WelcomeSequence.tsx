@@ -125,7 +125,7 @@ export function WelcomeSequence() {
   );
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {step === 1 ? (
         <motion.div key="welcome" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[70] flex items-center justify-center bg-background/70 p-4 backdrop-blur-sm">
           <div role="dialog" aria-modal="true" aria-label="Welcome" className="glass w-full max-w-md p-7 text-center">
