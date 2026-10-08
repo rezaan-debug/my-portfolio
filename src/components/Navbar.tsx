@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { BrandLogo } from "@/components/BrandLogo";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import glossyRaEmblem from "@/assets/glossy-ra-emblem.png.asset.json";
 
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
@@ -58,18 +58,19 @@ export function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 md:h-[72px]"
+        className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6 md:h-24"
       >
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex shrink-0 items-center"
           aria-label="Rezaan Achmat Fredericks — home"
         >
-          <BrandLogo size={36} />
-          <span className="font-display text-sm font-semibold tracking-tight sm:text-base">
-            RA Fredericks
-            <span className="sr-only"> — portfolio home</span>
-          </span>
+          <img
+            src={glossyRaEmblem.url}
+            alt="RA emblem"
+            draggable={false}
+            className="h-16 w-16 select-none object-contain drop-shadow-[var(--logo-shadow)] sm:h-[72px] sm:w-[72px] md:h-20 md:w-20"
+          />
         </Link>
 
         {/* Desktop nav */}

@@ -13,6 +13,7 @@ All tasks complete.
 - [x] Production build passes; all routes, dark mode, mobile layout, welcome
       sequence, MCP endpoint verified in a real browser with zero console errors
 - [x] Keep Welcome centered and anchor the light/dark and Zarney introductions to their buttons
+- [x] Match the navbar reference with the larger glossy RA emblem and no adjacent brand text
 
 ## Open items (waiting on Rezaan)
 
