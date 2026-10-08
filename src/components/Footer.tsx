@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { footer, profile } from "@/lib/portfolio";
-import footerArt from "@/assets/footer-art.png.asset.json";
+import footerArt from "@/assets/footer-art-neon.png.asset.json";
 import { BrandLogo } from "@/components/BrandLogo";
 
 export function Footer() {
